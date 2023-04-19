@@ -20,9 +20,7 @@ BuildRequires:  opt-kf5-kcoreaddons-devel >= %{kf5_version}
 BuildRequires:  opt-kf5-kwindowsystem-devel >= %{kf5_version}
 BuildRequires:  opt-kf5-rpm-macros 
 
-BuildRequires:  libX11-devel
 BuildRequires:  opt-qt5-qtbase-devel
-BuildRequires:  opt-qt5-qtx11extras-devel
 
 %{?_opt_qt5:Requires: %{_opt_qt5}%{?_isa} = %{_opt_qt5_version}}
 Requires: opt-qt5-qtbase-gui
