@@ -1,7 +1,7 @@
 %global kf5_version 5.105.0
 %global framework kcrash
 
-Name:    opt-kf5-%{framework}
+Name:    opt-kf5-kcrash
 Version: 5.105.0
 Release: 1%{?dist}
 Summary: KDE Frameworks 5 Tier 2 addon for handling application crashes
@@ -38,7 +38,7 @@ The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
 %prep
-%autosetup -n %{framework}-%{version}/upstream -p1
+%autosetup -n %{name}-%{version}/upstream -p1
 
 %build
 export QTDIR=%{_opt_qt5_prefix}
