@@ -60,15 +60,12 @@ pushd build
 make DESTDIR=%{buildroot} install
 popd
 
-%find_lang_kf5 kcrash5_qt
-
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
 %files
 %doc README.md
 %license LICENSES/*.txt
-%{_opt_kf5_datadir}/locale/
 %{_opt_kf5_datadir}/qlogging-categories5/%{framework}.*
 %{_opt_kf5_libdir}/libKF5Crash.so.*
 
