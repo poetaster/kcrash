@@ -21,9 +21,9 @@ Patch1: 0001-Fix-disable-X11-for-SFOS.patch
 BuildRequires:  opt-extra-cmake-modules >= %{kf5_version}
 BuildRequires:  opt-kf5-kcoreaddons-devel >= %{kf5_version}
 BuildRequires:  opt-kf5-kwindowsystem-devel >= %{kf5_version}
-BuildRequires:  opt-kf5-rpm-macros 
-
+BuildRequires:  opt-kf5-rpm-macros >= %{kf5_version}
 BuildRequires:  opt-qt5-qtbase-devel
+BuildRequires:  opt-qt5-qttools-devel
 
 %{?_opt_qt5:Requires: %{_opt_qt5}%{?_isa} = %{_opt_qt5_version}}
 Requires: opt-qt5-qtbase-gui
@@ -60,7 +60,7 @@ pushd build
 make DESTDIR=%{buildroot} install
 popd
 
-%find_lang_kf5 kcompletion5_qt
+%find_lang_kf5 kcrash5_qt
 
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
