@@ -1,0 +1,25 @@
+From a8853166742cf5425e235d00579eb9551b8a6749 Mon Sep 17 00:00:00 2001
+From: Mark Washeim <blueprint@poetaster.de>
+Date: Fri, 21 Apr 2023 10:00:06 +0200
+Subject: [PATCH] Fix, disable X11 for SFOS
+
+---
+ CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index db59b66..b3fe187 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -21,7 +21,7 @@ set(REQUIRED_QT_VERSION 5.15.2)
+ find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} CONFIG REQUIRED Core Gui)
+ 
+ if (UNIX AND NOT APPLE AND NOT ANDROID)
+-    option(WITH_X11 "Build with X11 integration" ON)
++    set(WITH_X11 OFF) #SFOS build disable, better flag?
+ else()
+     set(WITH_X11 OFF)
+ endif()
+-- 
+2.34.1
+

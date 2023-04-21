@@ -1,17 +1,20 @@
 %global kf5_version 5.105.0
 %global framework kcrash
 
-Name:    opt-kf5-kcrash
+Name:  opt-kf5-kcrash
 Version: 5.105.0
 Release: 1%{?dist}
 Summary: KDE Frameworks 5 Tier 2 addon for handling application crashes
 
 License: LGPLv2+
-URL:     https://invent.kde.org/frameworks/%{framework}
+URL:   https://invent.kde.org/frameworks/%{framework}
 
 %{?opt_kf5_default_filter}
 
-Source0: 		%{name}-%{version}.tar.bz2
+Source0:     %{name}-%{version}.tar.bz2
+
+#SFOS required patches
+Patch1: 0001-Fix-disable-X11-for-SFOS.patch
 
 ## upstream patches
 
@@ -29,11 +32,11 @@ Requires: opt-qt5-qtbase-gui
 KCrash provides support for intercepting and handling application crashes.
 
 
-%package        devel
-Summary:        Development files for %{name}
-Requires:       %{name}%{?_isa} = %{version}-%{release}
-Requires:       opt-qt5-qtbase-devel
-%description    devel
+%package    devel
+Summary:    Development files for %{name}
+Requires:     %{name}%{?_isa} = %{version}-%{release}
+Requires:     opt-qt5-qtbase-devel
+%description  devel
 The %{name}-devel package contains libraries and header files for
 developing applications that use %{name}.
 
