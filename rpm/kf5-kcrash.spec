@@ -71,7 +71,6 @@ popd
 %{_opt_kf5_datadir}/locale/
 %{_opt_kf5_datadir}/qlogging-categories5/%{framework}.*
 %{_opt_kf5_libdir}/libKF5Crash.so.*
-%{_opt_opt_kf5_datadir}/locale/
 
 %files devel
 
